@@ -23,23 +23,20 @@
 
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/RimageViewBig"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-
         android:layout_marginTop="320dp"
         android:src="@drawable/big"
-        android:visibility="invisible"
+        android:visibility="gone"
         />
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/RimageViewSmall"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-
         android:layout_marginTop="320dp"
         android:src="@drawable/smallletter"
-        android:visibility="invisible"
-
+        android:visibility="gone"
         />
 
 

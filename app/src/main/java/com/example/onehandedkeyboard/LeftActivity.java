@@ -14,6 +14,7 @@ public class LeftActivity extends AppCompatActivity {
     ImageView bigImage, smallImage;
     EditText Text;
     boolean isBig = true;
+    int i=0;
 
     boolean firstPoint = true;
     float firstX = 0f;
@@ -35,19 +36,19 @@ public class LeftActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                  //  Log.e("ALIA", "evx:"+event.getX());
-                  //  Log.e("ALIA", "evy:"+event.getY());
+               //     Log.e("ALIA", "evx:"+event.getX());
+                 //   Log.e("ALIA", "evy:"+event.getY());
                     if (firstPoint) {
                         firstX = event.getX();
                         firstY = event.getY();
                         firstPoint = false;
                     } else {
-                      //  Log.e("ALIA", "else if (isPointInside("+firstX+"f, "+event.getY()+"f, "+event.getX()+"f, "+firstY+"f, x, y)) {\n" +
-                     //           "            \n" +
-                     //           "        }");
+                   //     Log.e("ALIA", "else if (isPointInside("+firstX+"f, "+event.getY()+"f, "+event.getX()+"f, "+firstY+"f, x, y)) {\n" +
+                     //         "            \n" +
+                      //          "        }");
                         firstPoint = true;
                     }
-               //     Log.e("ALIA", "Key:"+getChar(event.getX(), event.getY()));
+                    Log.e("Backspace", "Key:"+getChar(event.getX(), event.getY()));
                     Text.setText(Text.getText()+getChar(event.getX(), event.getY()));
                     Text.setSelection(Text.getText().length());
                     return true;
@@ -198,14 +199,35 @@ public class LeftActivity extends AppCompatActivity {
         //Shift
         else if (isPointInside(335.51624f, 995.94147f, 477.8141f, 1097.6193f, x, y)) {
             // shift
-            if (isBig) {
-                isBig = false;
+            if (isBig==true && i<=1) {
+
                 bigImage.setVisibility(View.GONE);
                 smallImage.setVisibility(View.VISIBLE);
-            } else {
-                isBig = true;
-                bigImage.setVisibility(View.VISIBLE);
+                i++;
+                if(i<=1)
+                {
+                    isBig = true;
+                }
+                else if(i>1)
+                {
+                    isBig = false;
+                    i=0;
+                }
+            }
+            else if (isBig==false && i<=1) {
+                isBig = false;
                 smallImage.setVisibility(View.GONE);
+                bigImage.setVisibility(View.VISIBLE);
+                i++;
+                if(i<=1)
+                {
+                    isBig = false;
+                }
+                else if(i>1)
+                {
+                    isBig = true;
+                    i=0;
+                }
             }
         }
 
