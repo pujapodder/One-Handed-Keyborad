@@ -207,8 +207,15 @@ public class LeftActivity extends AppCompatActivity {
                 bigImage.setVisibility(View.VISIBLE);
                 smallImage.setVisibility(View.GONE);
             }
-        }  // backspace
-         else if (isPointInside(860.7106f, 448.32715f, 1050.5437f, 585.3845f, x, y)) {
+        }
+
+
+        //Space
+        else if (isPointInside(596.7289f, 741.0547f, 996.7012f, 1101.0034f, x, y)) {
+            return " ";
+        }
+        // backspace
+        else if (isPointInside(860.7106f, 448.32715f, 1050.5437f, 585.3845f, x, y)) {
             // backspace
             String currentText = Text.getText().toString();
             if (currentText.length() > 0) {
@@ -216,12 +223,8 @@ public class LeftActivity extends AppCompatActivity {
                 Text.setSelection(Text.getText().length());
             }
         }
-
-        //Space
-        else if (isPointInside(596.7289f, 741.0547f, 996.7012f, 1101.0034f, x, y)) {
-            return " ";
-        }
         return "";
+
     }
 
     boolean isPointInside(float x1, float y1, float x2,
