@@ -1,14 +1,19 @@
 package com.example.onehandedkeyboard;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.Random;
 
 public class RightActivity extends AppCompatActivity {
     ImageView bigImage, smallImage;
@@ -18,6 +23,22 @@ public class RightActivity extends AppCompatActivity {
     boolean firstPoint = false;
     float firstX = 0f;
     float firstY = 0f;
+    String EnteredText;
+
+    public static final String[ ] sentences =
+            {
+                    "Whatever you are, be a good one.",
+                    "Winter is coming.",
+                    "Summer is here.",
+                    "Canada is gold.",
+                    "Try and fail, but never fail to try.",
+                    "Do one thing every day that scared you.",
+                    "Avoid drunk driving.",
+                    "Be your best.",
+                    "Every man dies.",
+                    "Focus and win.",
+
+            };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +47,19 @@ public class RightActivity extends AppCompatActivity {
         bigImage = (ImageView) findViewById(R.id.RimageViewBig);
         smallImage = (ImageView) findViewById(R.id.RimageViewSmall);
         Text = (EditText) findViewById(R.id.editText);
-
+        final TextView sentence = (TextView) findViewById(R.id.textView);
+        final Button button_next = findViewById(R.id.button_next);
+        final int random = new Random().nextInt((9 - 0) + 1);
         Text.requestFocus();
 
+        sentence.setText(sentences[random]);
 
         View.OnTouchListener listener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                   //    Log.e("ALIA", "evx:"+event.getX());
+                 //     Log.e("ALIA", "evx:"+event.getX());
                    //   Log.e("ALIA", "evy:"+event.getY());
                     if (firstPoint) {
                         firstX = event.getX();
@@ -67,6 +91,18 @@ public class RightActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                     bigImage.setVisibility(View.VISIBLE);
+                    button_next.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+
+        button_next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                EnteredText = Text.getText().toString();
+                final int random = new Random().nextInt((9 - 0) + 1);
+                sentence.setText(sentences[random]);
 
             }
         });
