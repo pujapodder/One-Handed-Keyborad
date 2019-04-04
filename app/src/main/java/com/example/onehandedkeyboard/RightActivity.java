@@ -59,16 +59,16 @@ public class RightActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                 //     Log.e("ALIA", "evx:"+event.getX());
-                   //   Log.e("ALIA", "evy:"+event.getY());
+                      Log.e("ALIA", "evx:"+event.getX());
+                      Log.e("ALIA", "evy:"+event.getY());
                     if (firstPoint) {
                         firstX = event.getX();
                         firstY = event.getY();
                         firstPoint = false;
                     } else {
-                        //    Log.e("ALIA", "else if (isPointInside("+firstX+"f, "+event.getY()+"f, "+event.getX()+"f, "+firstY+"f, x, y)) {\n" +
-                           //    "            \n" +
-                           //       "        }");
+                            Log.e("ALIA", "else if (isPointInside("+firstX+"f, "+event.getY()+"f, "+event.getX()+"f, "+firstY+"f, x, y)) {\n" +
+                               "            \n" +
+                                  "        }");
                         firstPoint = true;
                     }
                     Log.e("Backspace", "Key:" + getChar(event.getX(), event.getY()));
@@ -127,7 +127,7 @@ public class RightActivity extends AppCompatActivity {
             return isBig ? "R" : "r";
         }
         //T
-        else if (isPointInside(277.67407f, 466.3246f, 468.7378f, 477.2461f, x, y)) {
+        else if (isPointInside(269.05933f, 466.3246f, 470.27612f, 570.00214f, x, y)) {
             return isBig ? "T" : "t";
         }
         //Y
@@ -164,7 +164,7 @@ public class RightActivity extends AppCompatActivity {
             return isBig ? "D" : "d";
         }
         //F
-        else if (isPointInside(298.4419f, 667.68054f, 485.50586f, 673.0644f, x, y)) {
+        else if (isPointInside(298.4419f, 667.68054f, 485.50586f,  754.28357f, x, y)) {
             return isBig ? "F" : "f";
         }
         //G
