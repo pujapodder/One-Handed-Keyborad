@@ -3,13 +3,16 @@
     package="com.example.onehandedkeyboard">
 
     <application
+        android:name=".MainApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RightActivity"></activity>
+        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".DefaultKeyboardActivity"></activity>
+        <activity android:name=".RightActivity" />
         <activity android:name=".LeftActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

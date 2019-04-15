@@ -18,7 +18,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="150dp"
-        android:text="Enter Text"
+        android:hint="Enter Text"
          />
 
 

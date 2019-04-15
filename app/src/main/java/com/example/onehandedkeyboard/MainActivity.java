@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         button_right = findViewById(R.id.button_right);
 
 
+
+
         button_left.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LeftActivity.class));
