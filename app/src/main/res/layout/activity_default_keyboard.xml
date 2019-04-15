@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    tools:context=".DefaultKeyboardActivity">
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="150dp"
+        android:hint="Enter Here"
+        />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="300dp"
+        android:ems="50"
+        android:textColor="@android:color/background_dark"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif-thin"
+        tools:autoSizeTextType="uniform"
+        tools:fontFamily="serif-monospace" />
+
+    <Button
+        android:id="@+id/button_next"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Next"
+        android:layout_marginTop="290dp"
+        android:layout_marginBottom="300dp"
+        android:layout_marginLeft="200dp"/>
+
+</FrameLayout>
